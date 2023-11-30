@@ -1,12 +1,14 @@
+import { MainDiv } from "../../components/main"
+
 export default function Main({ params }: {
   params: { dimension : string }
 }) {
+
+  // get units data
+
   return ( 
-    <div className="p-5">
-      <div className="w-screen-lg max-w-screen-lg mx-auto">
-        <h2 className="text-2xl">{params.dimension}</h2>
-      </div>
-    </div>
-    
+    <MainDiv>
+      <h2 className="text-3xl text-capitalize">{params.dimension}</h2>
+    </MainDiv>                  
   )
 }
