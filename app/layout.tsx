@@ -1,3 +1,4 @@
+import Head from "../components/head"
 import "./global.css"
 
 export const metadata = {
@@ -12,7 +13,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <Head />
+        {children}
+      </body>
     </html>
   )
 }
