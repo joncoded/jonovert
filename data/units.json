@@ -1,19 +1,69 @@
 {
   "length" : {
-    "metres" : {
-      "foot" : 0.3048,
-      "mile" : 1609.34
-    },
-    "feet" : {
-      "metre": 3.28084,
-      "mile" : 5280
+    "units": {
+      "metre" : {
+        "description": "a metre is the standard unit for length",
+        "symbols": "m", 
+        "metric": true, 
+        "conversions": {
+          "foot" : 0.3048,
+          "mile" : 1609.34
+        }
+      },
+      "feet" : {
+        "description": "a foot is 12 inches",
+        "symbols": "\", in",
+        "metric": false, 
+        "conversions": {
+          "metre": 3.28084,
+          "mile" : 5280
+        }
+      }
     }
   },
-  "mass" : {
-    "kilogram" : {
-      "pound": 0.453592,
-      "tonne": 1000,
-      "stone": 6.35029
+  "mass" : {    
+    "units": {      
+      "kilogram" : {
+        "description": "", 
+        "symbols": ["kg"],
+        "metric": true, 
+        "conversions": {
+          "pound": 0.453592,
+          "tonne": 1000,
+          "stone": 6.35029
+        }
+      }
+    }
+  },
+  "time" : {
+    "units": {      
+      "second" : {
+        "description": "", 
+        "symbols": ["s"],
+        "metric": true, 
+        "conversions": {
+          "microsecond": 1000000,
+          "millisecond": 1000,
+          "minute": 0.0166667,
+          "hour": 0.0002777777778,        
+          "day": 0.000011574074074,
+          "week": 0.000001653439153,
+          "calendar-year-with-365-days": 0.000000031709792
+        }
+      },
+      "calendar-year-with-365-days" : {
+        "description": "",
+        "symbols": ["y, yr, a"],
+        "metric": false,
+        "conversions": {
+          "second": 31536000,
+          "minute" : 525600,
+          "hour": 8760,
+          "day": 365,
+          "week": 52.1428571429          
+        }
+
+      }
     }
   }
 }
