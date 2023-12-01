@@ -150,9 +150,14 @@
         "symbols": ["m", "min"],
         "metric": false,
         "conversions": {
+          "microsecond": 60000000,
+          "millisecond": 60000, 
           "second": 60,
           "minute": 1, 
-          "day": 0.000694444444444
+          "hour": 0.0166667,
+          "day": 0.000694444,
+          "week": 0.0000992063,
+          "year-regular": 0.00000190259
         }
       },
       "year-regular" : {
