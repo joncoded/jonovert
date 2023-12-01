@@ -1,41 +1,135 @@
 {
   "length" : {
+    "symbol": "L",
+    "siunit": "metre",
+    "defaultOutputUnit": "foot", 
+    "description": "a distance between two points",
     "units": {
       "metre" : {
         "description": "a metre is the standard unit for length",
         "symbols": "m", 
         "metric": true, 
         "conversions": {
-          "foot" : 0.3048,
-          "mile" : 1609.34
+          "foot" : 3.28084804951098,
+          "mile" : 0.00062137273665,
+          "nanometre": 1000000000,
+          "micrometre": 1000000,
+          "millimetre": 1000,
+          "centimetre": 100, 
+          "decimetre": 10,
+          "metre": 1, 
+          "decametre": 0.1, 
+          "hectometre": 0.01,
+          "kilometre": 0.001,
+          "megametre": 0.0001
         }
       },
-      "feet" : {
+      "foot" : {
         "description": "a foot is 12 inches",
-        "symbols": "\", in",
+        "symbols": ["\"", "in"],
         "metric": false, 
         "conversions": {
-          "metre": 3.28084,
-          "mile" : 5280
+          "foot": 1, 
+          "metre": 0.304799242424242,
+          "mile" : 0.000189393939394
         }
       }
     }
   },
-  "mass" : {    
+  "area" : {
+    "symbol": "L",
+    "siunit": "metre",
+    "defaultOutputUnit": "foot", 
+    "description": "a measure of coverage of an object",
+    "units": {
+      "metre" : {
+        "description": "a metre is the standard unit for length",
+        "symbols": "m", 
+        "metric": true, 
+        "conversions": {
+          "metre": 1, 
+          "foot" : 3.28084804951098,
+          "mile" : 0.00062137273665
+        }
+      },
+      "foot" : {
+        "description": "a foot is 12 inches",
+        "symbols": ["\"", "in"],
+        "metric": false, 
+        "conversions": {
+          "foot": 1, 
+          "metre": 0.304799242424242,
+          "mile" : 0.000189393939394
+        }
+      }
+    }
+  },
+  "volume" : {
+    "symbol": "L",
+    "siunit": "metre",
+    "defaultOutputUnit": "foot", 
+    "description": "a measure of space taken up by an object",
+    "units": {
+      "metre" : {
+        "description": "a metre is the standard unit for length",
+        "symbols": "m", 
+        "metric": true, 
+        "conversions": {
+          "metre": 1, 
+          "foot" : 3.28084804951098,
+          "mile" : 0.00062137273665
+        }
+      },
+      "foot" : {
+        "description": "a foot is 12 inches",
+        "symbols": ["\"", "in"],
+        "metric": false, 
+        "conversions": {
+          "foot": 1, 
+          "metre": 0.304799242424242,
+          "mile" : 0.000189393939394
+        }
+      }
+    }
+  },
+  "mass" : {   
+    "symbol": "M", 
+    "siunit": "kilogram", 
+    "defaultOutputUnit": "pound",
+    "description": "",
     "units": {      
       "kilogram" : {
         "description": "", 
         "symbols": ["kg"],
         "metric": true, 
         "conversions": {
-          "pound": 0.453592,
-          "tonne": 1000,
+          "kilogram": 1, 
+          "pound": 2.20462,
+          "us tonne": 0.00110231,
+          "imperial tonne": 0.000984207,
+          "metric tonne": 0.001,
+          "stone": 6.35029
+        }
+      },
+      "pound" : {
+        "description": "", 
+        "symbols": ["lb"],
+        "metric": false, 
+        "conversions": {
+          "kilogram": 0.4535970244, 
+          "pound": 1,
+          "tonne": 0.0005,
+          "metric tonne": 0.000446428571429,
           "stone": 6.35029
         }
       }
     }
   },
   "time" : {
+    "symbol": "T", 
+    "siunit": "second", 
+    "defaultOutputUnit": "day",
+    "description": "",
     "units": {      
       "second" : {
         "description": "", 
@@ -45,15 +139,25 @@
           "microsecond": 1000000,
           "millisecond": 1000,
           "minute": 0.0166667,
-          "hour": 0.0002777777778,        
+          "hour": 0.0002777777777777,        
           "day": 0.000011574074074,
           "week": 0.000001653439153,
-          "calendar-year-with-365-days": 0.000000031709792
+          "year-regular": 0.000000031709792
         }
       },
-      "calendar-year-with-365-days" : {
+      "minute" : {
         "description": "",
-        "symbols": ["y, yr, a"],
+        "symbols": ["m", "min"],
+        "metric": false,
+        "conversions": {
+          "second": 60,
+          "minute": 1, 
+          "day": 0.000694444444444
+        }
+      },
+      "year-regular" : {
+        "description": "",
+        "symbols": ["y", "yr", "a"],
         "metric": false,
         "conversions": {
           "second": 31536000,
