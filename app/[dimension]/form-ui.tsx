@@ -11,7 +11,7 @@ export interface FormUIProps {
 
 export const FormUI = ({type, onValueChange, onUnitChange, typeValue, typeUnit, typeUnits, valueLabel, unitLabel}: FormUIProps) => {
   return (
-    <div className={`page-panel-${type}-control-wrapper flex flex-col sm:flex-row justify-start gap-2 w-full`}>
+    <div className={`page-panel-${type}-control-wrapper flex flex-col justify-start gap-5 w-full`}>
 
       <div className={`page-panel-${type}-value-wrapper flex flex-col grow`}>
 
@@ -35,14 +35,14 @@ export const FormUI = ({type, onValueChange, onUnitChange, typeValue, typeUnit, 
 
       <div className={`page-panel-${type}-unit-wrapper flex flex-col`}>
 
-        <div className={`mt-5 mb-1 text-xl`}>
+        <div className={`mb-1 text-xl`}>
           <label htmlFor={`${type}Unit`}>{unitLabel}</label>
         </div>
 
         <div className={`page-panel-${type}-unit-field-wrapper`}>
           <select            
             name={`${type}Unit`}
-            className={`page-panel-${type}-unit-field border-2 border-gray-200 p-2 text-xl font-light`}
+            className={`page-panel-${type}-unit-field border-2 border-gray-200 p-2 text-xl font-light w-full`}
             onChange={onUnitChange}
             value={typeUnit}
           >
