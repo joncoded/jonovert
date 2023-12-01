@@ -1,11 +1,31 @@
+'use client'
+
 import Link from "next/link"
+import { useRouter } from "next/navigation"
 
 export default function Head() {
+
+  const router = useRouter()
+
+  const handleMenuChange = (e: any) => {
+    e.preventDefault()
+    router.push(e.target.value)
+  }
+
   return (
-    <div className="bg-sky-700 text-white w-full sticky top-0 z-40 p-5">
-      <div className="max-w-screen-md mx-auto">
-        <h1 className="text-4xl"><Link href="/">JONOVERT</Link></h1>
+    <header className="head-wrap bg-sky-700 text-white w-full sticky top-0 z-40 p-5">
+      <div className="head-prop max-w-screen-md mx-auto flex justify-between items-center">
+        <h1 className="head-ding text-4xl">
+          <Link href="/">JONOVERT</Link>
+        </h1>
+        <select className="head-menu bg-black text-white py-2 px-5" onChange={handleMenuChange}>
+          <option value="/">home</option>
+          <option value="/about">about</option>
+          <option value="/length">length</option>
+          <option value="/mass">mass</option>
+          <option value="/time">time</option>          
+        </select>
       </div>
-    </div>
+    </header>
   )
 }
