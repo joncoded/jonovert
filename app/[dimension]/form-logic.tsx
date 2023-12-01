@@ -8,19 +8,30 @@ interface FormProps {
 
 export default function FormLogic({data}: FormProps) {  
 
+  const [precision, setPrecision] = useState(4)
+
   const [inputValue, setInputValue] = useState(1)
   const [inputUnit, setInputUnit] = useState(data["siunit"])
   const [inputUnits] = useState(Object.keys(data["units"]))
 
-  const [outputValue, setOutputValue] = useState(data["units"][data["siunit"]]["conversions"][data["defaultOutputUnit"]])
+  const [outputValue, setOutputValue] = useState(data["units"][data["siunit"]]["conversions"][data["defaultOutputUnit"]].toFixed(precision))
   const [outputUnit, setOutputUnit] = useState(data["defaultOutputUnit"])
   const [outputUnits, setOutputUnits] = useState(Object.keys(data["units"][data["siunit"]]["conversions"]))
   
+  const handlePrecisionChange = (e: any) => {
+    e.preventDefault()
+    setPrecision(e.target.value)
+    const truncatedInputValue = Number(Number(inputValue).toFixed(precision))
+    const truncatedOutputValue = Number(Number(outputValue).toFixed(precision))    
+    setInputValue(truncatedInputValue)
+    setOutputValue(truncatedOutputValue)
+  }
+
   const handleInputValueChange = (e: any) => {
     e.preventDefault()
     if (e.target.value.match(/^\d+\.?\d*$/) || e.target.value === 0 || e.target.value === '') {      
       setInputValue(e.target.value)
-      setOutputValue(e.target.value * data["units"][inputUnit]["conversions"][outputUnit])
+      setOutputValue((e.target.value * data["units"][inputUnit]["conversions"][outputUnit]).toFixed(precision))
     } else {      
       e.target.value = inputValue
     }
@@ -37,7 +48,7 @@ export default function FormLogic({data}: FormProps) {
   const handleOutputValueChange = (e: any) => {
     e.preventDefault()
     if (e.target.value.match(/^\d+\.?\d*$/) || e.target.value === 0 || e.target.value === '') {          
-      setInputValue(e.target.value / data["units"][inputUnit]["conversions"][outputUnit])
+      setInputValue((e.target.value / data["units"][inputUnit]["conversions"][outputUnit]))
       setOutputValue(e.target.value)      
     } else {
       e.target.value = outputValue
@@ -58,6 +69,28 @@ export default function FormLogic({data}: FormProps) {
 
   return (
     <>
+
+      <section className="page-panel-precision">
+        <label htmlFor="precision">maximum # of decimal places</label>
+        <select 
+          name={`precision`}
+          className={`page-panel-precision-select block border border-gray-200 text-xl mt-2 p-2 w-full`}
+          onChange={handlePrecisionChange}
+          value={precision}
+        >
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>          
+        </select>
+      </section>
 
       <section className="page-panel-input-section">
       
