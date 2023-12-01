@@ -1,6 +1,6 @@
 import { MainDiv } from "../../components/main"
 import { promises as fs } from 'fs'
-import Form from "./form"
+import FormLogic from "./form-logic"
 
 export default async function Main({ params }: {
   params: { dimension : string }
@@ -20,7 +20,7 @@ export default async function Main({ params }: {
         <span className="ml-2 text-lg">conversions</span>
       </h2>
       
-      <Form data={data[dimension]} />
+      <FormLogic data={data[dimension]} />
     
     </MainDiv>                  
   )
