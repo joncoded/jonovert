@@ -15,9 +15,12 @@ export default function Head() {
   return (
     <header className="head-wrap bg-sky-700 text-white w-full sticky top-0 z-40 p-5">
       <div className="head-prop max-w-screen-md mx-auto flex justify-between items-center">
-        <h1 className="head-ding text-4xl">
-          <Link href="/">JONOVERT</Link>
-        </h1>
+        <div className="head-title">
+          <h1 className="head-ding text-4xl">
+            <Link href="/">JONOVERT</Link>          
+          </h1>
+          <div className="head-line text-md block">converting various units of measurement</div>
+        </div>
         <select className="head-menu bg-black text-white py-2 px-5" onChange={handleMenuChange}>
           <option value="/">home</option>
           <option value="/about">about</option>
