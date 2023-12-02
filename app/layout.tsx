@@ -1,5 +1,6 @@
-import Head from "../components/head"
 import "./global.css"
+import Head from "../components/head"
+import Tail from "../components/tail"
 
 export const metadata = {
   title: 'jonovert',
@@ -13,9 +14,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body className="min-h-screen">
         <Head />
         {children}
+        <Tail />
       </body>
     </html>
   )

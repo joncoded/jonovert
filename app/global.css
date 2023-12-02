@@ -36,3 +36,11 @@ main h2 {
 [class$="-section"] {
   margin: 40px 0;
 }
+
+footer a {
+  color: #dddddd;
+}
+
+footer a:hover {  
+  text-decoration: underline;
+}

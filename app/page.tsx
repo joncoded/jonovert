@@ -30,11 +30,7 @@ export default function Home() {
         <option value="/time">time</option>          
       </select>
 
-      <div className="flex flex-col sm:flex-row gap-5 mt-10">
-        <Link href="/about">about</Link>
-        <Link href="https://github.com/joncoded/jonovert">github</Link>
-        <Link href="https://github.com/joncoded/jonovert">joncoded</Link>
-      </div>
+
       
       
     </MainDiv>
