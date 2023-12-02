@@ -70,8 +70,44 @@ export default function FormLogic({data}: FormProps) {
   return (
     <>
 
-      <section className="page-panel-precision flex flex-col gap-1">        
-        <label htmlFor="precision">maximum number of decimal places: </label>        
+      <section className="page-panel-input-section">
+      
+        <SectionHeading>Input</SectionHeading>
+        
+        <FormUI 
+          type="input"
+          onValueChange={handleInputValueChange}
+          onUnitChange={handleInputUnitChange}
+          typeValue={inputValue}
+          typeUnit={inputUnit}
+          typeUnits={inputUnits}
+          valueLabel=""
+          unitLabel=""          
+        />
+
+      </section>
+
+      <section className="page-panel-output-section">
+      
+        <SectionHeading>Output</SectionHeading>
+        
+        <FormUI 
+          type="output"
+          onValueChange={handleOutputValueChange}
+          onUnitChange={handleOutputUnitChange}
+          typeValue={outputValue}
+          typeUnit={outputUnit}
+          typeUnits={outputUnits}
+          valueLabel=""
+          unitLabel=""
+        />
+    
+      </section>
+
+      <section className="page-panel-precision flex flex-col gap-1">  
+
+        <label htmlFor="precision">Truncate values to number of decimal places: </label>        
+      
         <select 
           name={`precision`}
           className={`page-panel-precision-select block border border-gray-200 text-xl mt-2 p-2 w-full`}
@@ -90,41 +126,8 @@ export default function FormLogic({data}: FormProps) {
           <option value="9">9</option>
           <option value="10">10</option>          
         </select>
-      </section>
-
-      <section className="page-panel-input-section">
       
-        <SectionHeading>Input</SectionHeading>
-        
-        <FormUI 
-          type="input"
-          onValueChange={handleInputValueChange}
-          onUnitChange={handleInputUnitChange}
-          typeValue={inputValue}
-          typeUnit={inputUnit}
-          typeUnits={inputUnits}
-          valueLabel="Convert"
-          unitLabel="from unit"          
-        />
-
-      </section>
-
-      <section className="page-panel-output-section">
-      
-        <SectionHeading>Output</SectionHeading>
-        
-        <FormUI 
-          type="output"
-          onValueChange={handleOutputValueChange}
-          onUnitChange={handleOutputUnitChange}
-          typeValue={outputValue}
-          typeUnit={outputUnit}
-          typeUnits={outputUnits}
-          valueLabel="Conversion"
-          unitLabel="to unit"
-        />
-    
-      </section>
+      </section>      
 
     </>
   )

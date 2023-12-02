@@ -11,7 +11,7 @@ export interface FormUIProps {
 
 export const FormUI = ({type, onValueChange, onUnitChange, typeValue, typeUnit, typeUnits, valueLabel, unitLabel}: FormUIProps) => {
   return (
-    <div className={`page-panel-${type}-control-wrapper flex flex-col justify-start gap-5 w-full`}>
+    <div className={`page-panel-${type}-control-wrapper flex flex-col justify-start gap-5 w-full mt-5`}>
 
       <div className={`page-panel-${type}-value-wrapper flex flex-col grow`}>
 
