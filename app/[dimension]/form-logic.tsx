@@ -31,7 +31,7 @@ export default function FormLogic({data}: FormProps) {
     e.preventDefault()
     if (e.target.value.match(/^\d+\.?\d*$/) || e.target.value === 0 || e.target.value === '') {      
       setInputValue(e.target.value)
-      setOutputValue((e.target.value * data["units"][inputUnit]["conversions"][outputUnit]).toFixed(precision))
+      setTimeout(() => setOutputValue((e.target.value * data["units"][inputUnit]["conversions"][outputUnit]).toFixed(precision)), 500)
     } else {      
       e.target.value = inputValue
     }
@@ -70,8 +70,8 @@ export default function FormLogic({data}: FormProps) {
   return (
     <>
 
-      <section className="page-panel-precision">
-        <label htmlFor="precision">maximum # of decimal places</label>
+      <section className="page-panel-precision flex flex-col gap-1">        
+        <label htmlFor="precision">maximum number of decimal places: </label>        
         <select 
           name={`precision`}
           className={`page-panel-precision-select block border border-gray-200 text-xl mt-2 p-2 w-full`}

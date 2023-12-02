@@ -42,7 +42,7 @@ export const FormUI = ({type, onValueChange, onUnitChange, typeValue, typeUnit, 
         <div className={`page-panel-${type}-unit-field-wrapper`}>
           <select            
             name={`${type}Unit`}
-            className={`page-panel-${type}-unit-field border-2 border-gray-200 p-2 text-xl font-light w-full`}
+            className={`page-panel-${type}-unit-field border-2 border-gray-200 bg-gray-200 p-2 text-xl font-light w-full`}
             onChange={onUnitChange}
             value={typeUnit}
           >
