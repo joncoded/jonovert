@@ -2,7 +2,6 @@
 
 import { MainDiv } from "../components/main"
 import { useRouter } from "next/navigation"
-import Link from "next/link"
 
 export default function Home() {
 
@@ -29,10 +28,7 @@ export default function Home() {
         <option value="/mass">mass</option>
         <option value="/time">time</option>          
       </select>
-
-
-      
-      
+          
     </MainDiv>
   )
 }
