@@ -15,7 +15,7 @@ export const FormUI = ({type, onValueChange, onUnitChange, typeValue, typeUnit, 
 
       <div className={`page-panel-${type}-value-wrapper flex flex-col grow`}>
 
-        <div className={`page-panel-${type}-value-label mt-5 mb-1 text-xl`}>
+        <div className={`page-panel-${type}-value-label mt-2 mb-1 text-xl`}>
           <label htmlFor={`${type}Value`}>{valueLabel}</label>
         </div>
         
