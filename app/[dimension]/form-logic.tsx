@@ -9,12 +9,14 @@ interface FormProps {
 export default function FormLogic({data}: FormProps) {  
 
   const [precision, setPrecision] = useState(4)
+  const [precision, setPrecision] = useState(100)  
 
   const [inputValue, setInputValue] = useState(1)
   const [inputUnit, setInputUnit] = useState(data["siunit"])
   const [inputUnits] = useState(Object.keys(data["units"]))
 
   const [outputValue, setOutputValue] = useState(data["units"][data["siunit"]]["conversions"][data["defaultOutputUnit"]].toFixed(precision))
+  const [outputValue, setOutputValue] = useState(data["units"][data["siunit"]]["conversions"][data["defaultOutputUnit"]])
   const [outputUnit, setOutputUnit] = useState(data["defaultOutputUnit"])
   const [outputUnits, setOutputUnits] = useState(Object.keys(data["units"][data["siunit"]]["conversions"]))
   
@@ -23,6 +25,10 @@ export default function FormLogic({data}: FormProps) {
     setPrecision(e.target.value)
     const truncatedInputValue = Number(Number(inputValue).toFixed(precision))
     const truncatedOutputValue = Number(Number(outputValue).toFixed(precision))    
+    const newPrecision = e.target.value
+    setPrecision(newPrecision)
+    const truncatedInputValue = Number(Number(inputValue).toFixed(newPrecision))
+    const truncatedOutputValue = Number(Number(outputValue).toFixed(newPrecision))    
     setInputValue(truncatedInputValue)
     setOutputValue(truncatedOutputValue)
   }
@@ -116,6 +122,7 @@ export default function FormLogic({data}: FormProps) {
           onChange={handlePrecisionChange}
           value={precision}
         >
+        >          
           <option value="0">0</option>
           <option value="1">1</option>
           <option value="2">2</option>
@@ -127,6 +134,7 @@ export default function FormLogic({data}: FormProps) {
           <option value="8">8</option>
           <option value="9">9</option>
           <option value="10">10</option>          
+          <option value="100">no maximum</option>          
         </select>
       
       </section>      
