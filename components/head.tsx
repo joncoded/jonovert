@@ -9,7 +9,8 @@ export default function Head() {
 
   const handleMenuChange = (e: any) => {
     e.preventDefault()
-    router.push(e.target.value)
+    if (e.target.value)
+      router.push(e.target.value)
   }
 
   return (
@@ -22,6 +23,7 @@ export default function Head() {
           <div className="head-line text-md block">converting various units of measurement</div>
         </div>
         <select className="head-menu bg-black text-white py-2 px-5" onChange={handleMenuChange}>
+          <option value="">M E N U</option>
           <option value="/">home</option>
           <option value="/about">about</option>
           <option value="/length">length</option>
