@@ -2,75 +2,105 @@
 import { useState } from "react"
 import { FormUI } from "./form-ui";
 
-interface FormProps {
+interface DataProps {
   data: object;
 }
 
-export default function FormLogic({data}: FormProps) {  
+export default function FormLogic({data}: DataProps) {  
 
-  const [precision, setPrecision] = useState(4)
   const [precision, setPrecision] = useState(100)  
 
   const [inputValue, setInputValue] = useState(1)
   const [inputUnit, setInputUnit] = useState(data["siunit"])
   const [inputUnits] = useState(Object.keys(data["units"]))
 
-  const [outputValue, setOutputValue] = useState(data["units"][data["siunit"]]["conversions"][data["defaultOutputUnit"]].toFixed(precision))
   const [outputValue, setOutputValue] = useState(data["units"][data["siunit"]]["conversions"][data["defaultOutputUnit"]])
   const [outputUnit, setOutputUnit] = useState(data["defaultOutputUnit"])
   const [outputUnits, setOutputUnits] = useState(Object.keys(data["units"][data["siunit"]]["conversions"]))
   
   const handlePrecisionChange = (e: any) => {
+
     e.preventDefault()
-    setPrecision(e.target.value)
-    const truncatedInputValue = Number(Number(inputValue).toFixed(precision))
-    const truncatedOutputValue = Number(Number(outputValue).toFixed(precision))    
+
+    // acknowledge precision input
     const newPrecision = e.target.value
     setPrecision(newPrecision)
+
+    // use precision value for input and output
     const truncatedInputValue = Number(Number(inputValue).toFixed(newPrecision))
     const truncatedOutputValue = Number(Number(outputValue).toFixed(newPrecision))    
     setInputValue(truncatedInputValue)
     setOutputValue(truncatedOutputValue)
+
   }
 
   const handleInputValueChange = (e: any) => {
-    e.preventDefault()
+
+    e.preventDefault()    
+    
     if (e.target.value.match(/^\d+\.?\d*$/) || e.target.value === 0 || e.target.value === '') {      
+      
       setInputValue(e.target.value)
-      setTimeout(() => setOutputValue((e.target.value * data["units"][inputUnit]["conversions"][outputUnit]).toFixed(precision)), 500)
+      setOutputUnit(prev => prev)
+      const newOutputFormula = e.target.value * data["units"][inputUnit]["conversions"][outputUnit]      
+      const newOutputValue = Number(Number(newOutputFormula).toFixed(precision))
+      setOutputValue(newOutputValue)
+    
     } else {      
+    
       e.target.value = inputValue
+    
     }
+    
   }
 
   const handleInputUnitChange = (e: any) => {
-    e.preventDefault()    
-    setInputUnit(e.target.value)            
+
+    e.preventDefault()        
+    
+    setInputUnit(e.target.value)        
+    
     setOutputUnits(Object.keys(data["units"][e.target.value]["conversions"]))
-    setOutputUnit(data["units"][e.target.value][data["defaultOutputUnit"]])
-    setTimeout(() => setOutputValue(inputValue * data["units"][e.target.value]["conversions"][outputUnit]), 500)
+    setOutputUnit(prev => prev)
+    
+    const newOutputFormula = inputValue * data["units"][e.target.value]["conversions"][outputUnit]
+    setOutputValue(newOutputFormula.toFixed(precision))
+
   }
 
   const handleOutputValueChange = (e: any) => {
-    e.preventDefault()
-    if (e.target.value.match(/^\d+\.?\d*$/) || e.target.value === 0 || e.target.value === '') {          
-      setInputValue((e.target.value / data["units"][inputUnit]["conversions"][outputUnit]))
+    
+    e.preventDefault()    
+    
+    if (e.target.value.match(/^\d+\.?\d*$/) || e.target.value === 0 || e.target.value === '') {      
+    
       setOutputValue(e.target.value)      
+    
     } else {
+    
       e.target.value = outputValue
+    
     }
+
   }
 
   const handleOutputUnitChange = (e: any) => {
-    e.preventDefault()    
-    setOutputUnit(e.target.value)        
-    setTimeout(() => setOutputValue(inputValue * data["units"][inputUnit]["conversions"][e.target.value]), 500)
+
+    e.preventDefault()      
+
+    setOutputUnit(e.target.value)
+
+    const newOutputFormula = inputValue * data["units"][inputUnit]["conversions"][e.target.value]
+    setOutputValue(newOutputFormula)
+
   }
 
   const SectionHeading = ({children}: any) => {
+
     return (
       <h3 className="page-panel-input-heading text-3xl font-bold">{children}</h3>
     )
+
   }
 
   return (
@@ -112,16 +142,15 @@ export default function FormLogic({data}: FormProps) {
     
       </section>
 
-      <section className="page-panel-precision flex flex-col gap-1">  
+      <section className="page-panel-precision-section flex flex-col gap-5">  
 
-        <label htmlFor="precision">Truncate values to number of decimal places: </label>        
+        <label htmlFor="precision">Maximum number of decimal places: </label>        
       
         <select 
           name={`precision`}
-          className={`page-panel-precision-select block border border-gray-200 text-xl mt-2 p-2 w-full`}
+          className={`page-panel-precision-select block border border-gray-200 text-xl p-2 w-full`}
           onChange={handlePrecisionChange}
           value={precision}
-        >
         >          
           <option value="0">0</option>
           <option value="1">1</option>
@@ -141,4 +170,5 @@ export default function FormLogic({data}: FormProps) {
 
     </>
   )
+
 }
