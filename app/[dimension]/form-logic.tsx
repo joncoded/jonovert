@@ -81,6 +81,7 @@ export default function FormLogic({data}: FormProps) {
           typeValue={inputValue}
           typeUnit={inputUnit}
           typeUnits={inputUnits}
+          disabled={false}
           valueLabel=""
           unitLabel=""          
         />
@@ -98,6 +99,7 @@ export default function FormLogic({data}: FormProps) {
           typeValue={outputValue}
           typeUnit={outputUnit}
           typeUnits={outputUnits}
+          disabled={true}
           valueLabel=""
           unitLabel=""
         />

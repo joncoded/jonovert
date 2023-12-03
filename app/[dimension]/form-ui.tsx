@@ -7,9 +7,10 @@ export interface FormUIProps {
   typeUnits: string[];
   valueLabel: string;
   unitLabel: string;
+  disabled: boolean;
 }
 
-export const FormUI = ({type, onValueChange, onUnitChange, typeValue, typeUnit, typeUnits, valueLabel, unitLabel}: FormUIProps) => {
+export const FormUI = ({type, onValueChange, onUnitChange, typeValue, typeUnit, typeUnits, valueLabel, unitLabel, disabled}: FormUIProps) => {
   return (
     <div className={`page-panel-${type}-control-wrapper flex flex-col justify-start gap-5 w-full mt-5`}>
 
@@ -27,7 +28,8 @@ export const FormUI = ({type, onValueChange, onUnitChange, typeValue, typeUnit, 
             placeholder={`0`}
             className={`page-panel-${type}-value-field border-2 border-gray-200 p-2 text-xl sm:text-2xl lg:text-4xl  font-mono font-semibold text-gray-600 w-full`} 
             onChange={onValueChange}
-            value={typeValue}                
+            value={typeValue}   
+            disabled={disabled}             
           />
         </div>
 
