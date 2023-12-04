@@ -8,7 +8,7 @@ interface DataProps {
 
 export default function FormLogic({data}: DataProps) {  
 
-  const [precision, setPrecision] = useState(100)  
+  const [precision, setPrecision] = useState(8)  
 
   const [inputValue, setInputValue] = useState(1)
   const [inputUnit, setInputUnit] = useState(data["siunit"])
