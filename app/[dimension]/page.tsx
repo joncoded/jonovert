@@ -9,7 +9,7 @@ export default async function Main({ params }: {
   const { dimension } = params
 
   // get units data
-  const file = await fs.readFile(process.cwd() + '/data/dimensions.json', 'utf8')
+  const file = await fs.readFile(process.cwd() + '/var/task/data/dimensions.json', 'utf8')
   const data = JSON.parse(file)  
   
   return ( 
