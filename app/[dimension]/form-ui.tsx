@@ -1,3 +1,5 @@
+import { ChangeEventHandler } from "react";
+
 export interface FormUIProps {
   type: string;
   onValueChange: ChangeEventHandler<HTMLInputElement>;
