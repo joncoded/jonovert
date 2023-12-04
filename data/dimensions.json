@@ -5,6 +5,64 @@
     "defaultOutputUnit": "foot", 
     "description": "a distance between two points",
     "units": {
+      "nanometre" : {
+        "description": "",
+        "symbols": ["nm"], 
+        "metric": true, 
+        "conversions": {
+          "inch": 0.00000003937007874,
+          "foot" : 0.00000000328084804951098,
+          "yard": 0.00000000109361,
+          "mile" : 0.000000000000621371,
+          "nautical mile": 0.000000000000539957,          
+          "league": 0.0000000000002071237, 
+          "rope": 0.000000000164041995,
+          "rod": 0.000000001988387815,
+          "furlong": 0.00000000000497097,           
+          "chain": 0.000000000497097,
+          "link": 0.000000049709695379,
+          "fathom": 0.000000000546806649,
+          "nanometre": 1,
+          "micrometre": 0.001,
+          "millimetre": 0.000001,
+          "centimetre": 0.0000001,
+          "decimetre": 0.00000001,
+          "metre": 0.000000001,
+          "decametre": 0.0000000001,
+          "hectometre": 0.00000000001,
+          "kilometre": 0.000000000001,
+          "megametre": 0.000000000000001
+        }
+      },      
+      "micrometre" : {
+        "description": "",
+        "symbols": ["µm"], 
+        "metric": true, 
+        "conversions": {
+          "inch": 0.00003937007874,
+          "foot" : 0.00000328084804951098,
+          "yard": 0.00000109361,
+          "mile" : 0.000000000621371,
+          "nautical mile": 0.000000000539957,          
+          "league": 0.0000000002071237, 
+          "rope": 0.000000164041995,
+          "rod": 0.000001988387815,
+          "furlong": 0.00000000497097,           
+          "chain": 0.000000497097,
+          "link": 0.000049709695379,
+          "fathom": 0.000000546806649,
+          "nanometre": 1000,
+          "micrometre": 1,
+          "millimetre": 0.001,
+          "centimetre": 0.0001,
+          "decimetre": 0.00001,
+          "metre": 0.000001,
+          "decametre": 0.0000001,
+          "hectometre": 0.00000001,
+          "kilometre": 0.000000001,
+          "megametre": 0.000000000001
+        }
+      },
       "millimetre" : {
         "description": "",
         "symbols": ["mm"], 
@@ -189,7 +247,6 @@
           "yard": 1093.61,          
           "mile" : 0.62137273665,
           "nautical mile": 0.539957, 
-          "light year": 0.0000000000001057000834,
           "league": 0.2071237,
           "rope": 164.041995,
           "rod": 1988.387815,
@@ -210,7 +267,7 @@
         }
       }, 
       "megametre" : {
-        "description": "1000 metres",
+        "description": "",
         "symbols": ["Mm"], 
         "metric": true, 
         "conversions": {
@@ -237,9 +294,38 @@
           "kilometre": 1000,
           "megametre": 1
         }
-      },                  
+      }, 
+      "inch": {
+        "description": "",
+        "symbols": ["in"], 
+        "metric": true, 
+        "conversions": {
+          "inch": 1,
+          "foot" : 0.083333333333333,
+          "yard": 0.027777777777778,
+          "mile" : 0.0000157828282828282,
+          "nautical mile": 0.000013714902807775,
+          "league": 0.0000052609318643044,
+          "rope": 0.00416666666666,
+          "rod": 0.0050504950081623,
+          "furlong": 0.00012626237520406 ,
+          "chain": 0.0012626262626263,
+          "link": 0.12626262626263,
+          "fathom": 0.0138888888,
+          "nanometre": 25400000,
+          "micrometre": 25400,
+          "millimetre": 25.4,
+          "centimetre": 2.54,
+          "decimetre": 0.254,
+          "metre": 0.0254,
+          "decametre": 0.00254,
+          "hectometre": 0.000254,
+          "kilometre": 0.0000254,
+          "megametre": 0.0000000254
+        }
+      },                
       "foot" : {
-        "description": "a foot is 12 inches",
+        "description": "",
         "symbols": ["ft"],
         "metric": false, 
         "conversions": {
@@ -265,6 +351,64 @@
           "hectometre": 0.003048,
           "kilometre": 0.0003048,
           "megametre": 0.0000003048
+        }
+      },
+      "yard" : {
+        "description": "",
+        "symbols": ["yd"],
+        "metric": false, 
+        "conversions": {
+          "inch": 36,
+          "foot" : 3,
+          "yard": 1,
+          "mile" : 0.00056818181818182,
+          "nautical mile": 0.00049373650107991,
+          "league": 0.00018939354711496,
+          "rope": 0.15,
+          "rod": 0.18181782029384,
+          "furlong": 0.0045454455073461,
+          "chain": 0.045454545454545,
+          "link": 4.545454545454545,
+          "fathom": 0.5,
+          "nanometre": 914400000,
+          "micrometre": 914400,
+          "millimetre": 914.4,
+          "centimetre": 91.44, 
+          "decimetre": 9.144,
+          "metre": 0.9144, 
+          "decametre": 0.009144, 
+          "hectometre": 0.0009144,
+          "kilometre": 0.00009144,
+          "megametre": 0.00000009144
+        }
+      },
+      "mile" : {
+        "description": "",
+        "symbols": ["mi"],
+        "metric": false, 
+        "conversions": {
+          "inch": 63360,
+          "foot" : 5280,
+          "yard": 1760,
+          "mile" : 1,
+          "nautical mile": 0.86897624190065,
+          "league": 0.33333264292233,
+          "rope": 0.15,
+          "rod": 264,
+          "furlong": 7.9999840929291,
+          "chain": 80,
+          "link": 8000,
+          "fathom": 880,
+          "nanometre": 1609344000000,
+          "micrometre": 1609344000,
+          "millimetre": 1609344,
+          "centimetre": 160934.4, 
+          "decimetre": 16093.44,
+          "metre": 1609.344, 
+          "decametre": 160.9344, 
+          "hectometre": 16.09344,
+          "kilometre": 1.609344,
+          "megametre": 0.001609344
         }
       }
     }
