@@ -5,6 +5,8 @@ import Tail from "../components/tail"
 export const metadata = {
   title: 'jonovert',
   description: 'converting units of measurements',
+  keywords: 'metric, measurements',
+  author: 'joncoded'  
 }
 
 export default function RootLayout({
