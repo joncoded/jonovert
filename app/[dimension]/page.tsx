@@ -1,5 +1,5 @@
 import { MainDiv } from "../../components/main"
-import { promises as fs } from 'fs'
+import { dimensions } from "../../data/dimensions"
 import FormLogic from "./form-logic"
 
 export default async function Main({ params }: {
@@ -7,10 +7,6 @@ export default async function Main({ params }: {
 }) {
 
   const { dimension } = params
-
-  // get units data
-  const file = await fs.readFile(process.cwd() + '/var/task/data/dimensions.json', 'utf8')
-  const data = JSON.parse(file)  
   
   return ( 
     <MainDiv>
@@ -20,7 +16,7 @@ export default async function Main({ params }: {
         <span className="ml-2 text-lg">conversions</span>
       </h2>
       
-      <FormLogic data={data[dimension]} />
+      <FormLogic data={dimensions[dimension]} />
     
     </MainDiv>                  
   )

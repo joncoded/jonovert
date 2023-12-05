@@ -1,4 +1,4 @@
-{
+export const dimensions = {
   "length" : {
     "symbol": "L",
     "siunit": "metre",
