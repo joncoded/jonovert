@@ -21,6 +21,10 @@ export default function About() {
       
       <p>So, I have created this website to work more for me, rather than the other way around!</p>
 
+      <h3 className="text-3xl font-light">About</h3>
+
+      <p>The "minimal viable product" is complete and <Link href="https://github.com/joncoded/jonovert/commits/master">will report more conversion data</Link> when time permits!</p>
+
       <hr className="my-5" />
       
       <p>

@@ -18,7 +18,8 @@ export default function Head() {
       <div className="head-prop max-w-screen-md mx-auto flex justify-between items-center">
         <div className="head-title">
           <h1 className="head-ding text-4xl">
-            <Link href="/">JONOVERT</Link>          
+            <Link href="/">JONOVERT</Link>
+            <span className="text-2xl ml-2">BETA</span>          
           </h1>
           <div className="head-line text-md block">converting various units of measurement</div>
         </div>
